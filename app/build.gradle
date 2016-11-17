@@ -10,6 +10,10 @@ android {
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
+        ndk{
+            moduleName "YanboberJniLibName"         //生成的so名字
+            abiFilters "armeabi", "armeabi-v7a", "x86"  //输出指定三种abi体系结构下的so库。目前可有可无。
+        }
     }
     buildTypes {
         release {
@@ -23,4 +27,7 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.+'
+    compile 'com.squareup.okhttp3:okhttp:3.4.2'
+    compile 'com.google.code.gson:gson:2.8.0'
+    compile 'com.squareup.retrofit2:retrofit:2.0.0-beta3'
 }
